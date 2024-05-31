@@ -1,0 +1,20 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-g",
+      "-Wall",
+      "-std=c11",
+      "-Isrc",
+      "-Ilib/Unity/src",
+      "src/adf4368.o",
+      "-o",
+      "src/main",
+      "src/main.c"
+    ],
+    "directory": "/home/benf/repos/adf4368",
+    "file": "/home/benf/repos/adf4368/src/main.c",
+    "output": "/home/benf/repos/adf4368/src/main"
+  }
+]
