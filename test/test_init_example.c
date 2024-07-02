@@ -1,22 +1,7 @@
-# ADF4368
-
-## Overview
-
-This repository provides a 
-
-## Capabilities
-
-- On the fly computing of fractional frequency paramers.
-
-## Limitations
-
-## Basic Usage
-
-### Basic initialisation
-
-```c
 #include "adf4368.h"
 #include "adf4368_debug.h"
+#include <stdint.h>
+#include "unity.h"
 
 adf4368_err spi_write(uint8_t reg, uint8_t val) {
     // your spi write code in here 
@@ -54,53 +39,32 @@ adf4368_state state = {
     }
 };
 
-int main()
+void setUp(void)
 {
-// set initialisation frequency
-uint64_t f_target = 10000000000;
-// cal init function
-adf4368_err err = adf4368_standard_initialisation(&state, f_target);
-
-// check return value
-if (err!=ADF4368_ERR_OK){
-    printf(adf_str_err.val);
 }
+
+
+void tearDown(void)
+{
 }
-```
 
-### Initialisation with custom parameters
-```c
+void test_init(void){
 
-```
+  // set initialisation frequency
+  uint64_t f_target = 10000000000;
 
-### Updating parameters on the fly
-```c
+  // call init function
+  adf4368_err err = adf4368_standard_initialisation(&state, f_target);
 
-```
-
-### Frequeny hopping with auto calibration
-```c
-
-```
-
-### Frequency hopping with manual calibration
-
-## API Philosophy
-
-### Parameter Cache
-
-- State management problem
-- Also refered to as staging area
-
-### Self check
-
-### Error Handling
-
-- 
-
-### Debug
+  // check return value
+  if (err!=ADF4368_ERR_OK){
+      TEST_PRINTF(adf4368_str_err().val);
+  }
+}
 
 
-### Tests
-
-## ADF4368 Theory (TODO)
+int main(void) {
+    UNITY_BEGIN();
+    RUN_TEST(test_init);
+    return UNITY_END();
+}
