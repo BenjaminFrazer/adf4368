@@ -1,0 +1,189 @@
+  0,          PARAM_NOT_DEF,          0
+  1,             SOFT_RESET,          0
+  3,              LSB_FIRST,          0
+  4,      ADDRESS_ASCENSION,          0
+  5,             SDO_ACTIVE,          1
+  6,           SDO_ACTIVE_R,          1
+  7,    ADDRESS_ASCENSION_R,          0
+  8,            LSB_FIRST_R,          0
+  9,           SOFT_RESET_R,          0
+ 10,         RESERVED_X01_0,          0
+ 11,             REG01_RSV0,          0
+ 12,             REG01_RSV1,          0
+ 13,         RESERVED_X01_3,          0
+ 14,             REG01_RSV4,          0
+ 15,  MAIN_READBACK_CONTROL,          0
+ 16,             REG01_RSV6,          0
+ 17,     SINGLE_INSTRUCTION,          0
+ 18,            CHIP_STATUS,          0
+ 19,           RESERVED_X02,          0
+ 20,              CHIP_TYPE,          0
+ 21,           RESERVED_X03,          0
+ 22,             PRODUCT_ID,          0
+ 23,        DEVICE_REVISION,          0
+ 24,          PRODUCT_GRADE,          0
+ 25,             SCRATCHPAD,          0
+ 26,           SPI_REVISION,          0
+ 27,              VENDOR_ID,          0
+ 28,             CONST0xF_0,          0
+ 29,           RESERVED_X0F,          0
+ 30,                   NINT,        102
+ 31,             INV_CLKOUT,          0
+ 32,               INT_MODE,          0
+ 33,             CLKOUT_DIV,          0
+ 34,              FRAC1WORD,          0
+ 35,                CMOS_OV,          1
+ 36,             M_VCO_BIAS,          0
+ 37,             M_VCO_CORE,          0
+ 38,             M_VCO_BAND,          0
+ 39,              FRAC2WORD,          0
+ 40,               MOD2WORD,    8388608
+ 41,                BLEED_I,          0
+ 42,              TIME_SYNC,          0
+ 43,             EN_REF_RST,          0
+ 44,       EN_PHASE_RESY_NC,          0
+ 45,                   CP_I,          0
+ 46,               EN_BLEED,          0
+ 47,              BLEED_POL,          0
+ 48,              PHASE_ADJ,          0
+ 49,                SW_SYNC,          0
+ 50,                  R_DIV,          1
+ 51,               EN_RDBLR,          0
+ 52,             EN_AUTOCAL,          1
+ 53,             PHASE_WORD,          0
+ 54,       PHASE_ADJUSTMENT,          0
+ 55,            RESYNC_WAIT,          0
+ 56,            CONST0x28_0,          0
+ 57,            VAR_MODE_EN,          0
+ 58,                 LSB_P1,          0
+ 59,            CONST0x28_7,          0
+ 60,              CLK1_OPWR,          0
+ 61,              CLK2_OPWR,          0
+ 62,            CONST0x2A_0,          0
+ 63,                PD_RDET,          0
+ 64,            CONST0x2A_3,          0
+ 65,                PD_SYNC,          0
+ 66,            CONST0x2A_5,          0
+ 67,          PHASE_ADJ_POL,          0
+ 68,            CONST0x2A_7,          0
+ 69,             PD_CLKOUT2,          0
+ 70,             PD_CLKOUT1,          0
+ 71,            CONST0x2B_2,          0
+ 72,                  PD_LD,          0
+ 73,            CONST0x2B_4,          0
+ 74,                 PD_ALL,          0
+ 75,               LD_COUNT,          0
+ 76,               LDWIN_PW,          0
+ 77,            CONST0x2D_0,          1
+ 78,              EN_RST_LD,          0
+ 79,            CONST0x2D_3,          0
+ 80,               EN_LDWIN,          0
+ 81,                 EN_LOL,          0
+ 82,               EN_DRCLK,          1
+ 83,               EN_DNCLK,          1
+ 84,                  CP_UP,          0
+ 85,                CP_DOWN,          0
+ 86,              EN_CPTEST,          0
+ 87,            CONST0x2E_3,          0
+ 88,                 MUXOUT,          0
+ 89,            CONST0x2F_0,          7
+ 90,                REF_SEL,          0
+ 91,               FILT_REF,          0
+ 92,                BST_REF,          0
+ 93,              DNCLK_DEL,          0
+ 94,              DRCLK_DEL,          0
+ 95,            CONST0x30_6,          0
+ 96,              MUTE_NCLK,          0
+ 97,            CONST0x31_0,          1
+ 98,             EN_ADC_CLK,          1
+ 99,              RESET_SYS,          0
+100,               SYNC_DEL,          0
+101,            CONST0x32_0,        211
+102,            CONST0x33_0,         50
+103,            CONST0x34_0,        152
+104,            CONST0x35_0,          0
+105,              DCLK_MODE,          1
+106,            CONST0x35_3,          0
+107,            CONST0x36_0,         22
+108,             DLK_DIV_DB,          0
+109,             CLKODIV_DB,          0
+110,           VCO_BAND_DIV,         24
+111,     SYNTH_LOCK_TIMEOUT,      10000
+112,               O_VCO_DB,          0
+113,        VCO_ALC_TIMEOUT,       2500
+114,            DEL_CTRL_DB,          0
+115,            CONST0x3C_0,          0
+116,            CONST0x3D_0,        192
+117,            ADC_CLK_DIV,         31
+118,             ADC_A_CONV,          1
+119,                 EN_ADC,          1
+120,            CONST0x3F_2,          0
+121,             EN_ADC_CNV,          1
+122,           MUTE_CLKOUT1,          0
+123,           MUTE_CLKOUT2,          0
+124,            CONST0x40_6,          0
+125,            CONST0x41_0,          0
+126,            CONST0x42_0,        192
+127,            CONST0x43_0,          9
+128,            ADC_CLK_SEL,          0
+129,            CONST0x43_7,          0
+130,            CONST0x44_0,         24
+131,            CONST0x45_0,          8
+132,            CONST0x46_0,          0
+133,            CONST0x47_0,          0
+134,            CONST0x48_0,          0
+135,            CONST0x49_0,          0
+136,            CONST0x4A_0,          0
+137,            CONST0x4B_0,         93
+138,            CONST0x4C_0,         43
+139,            CONST0x4D_0,          0
+140,            CONST0x4E_0,          0
+141,             O_VCO_BIAS,          0
+142,             O_VCO_CORE,          0
+143,             O_VCO_BAND,          0
+144,              DCLK_DIV1,          0
+145,            CONST0x4E_6,          0
+146,            CONST0x4F_0,          0
+147,            CONST0x50_0,          0
+148,            CONST0x51_0,          0
+149,            CONST0x52_0,          0
+150,            CONST0x53_0,          5
+151,           RST_SYNC_MON,          0
+152,               SYNC_SEL,          0
+153,            PD_SYNC_MON,          0
+154,            CONST0x53_7,          0
+155,             ADC_ST_CNV,          0
+156,           RESERVED_X54,          0
+157,            CONST0x55_0,          0
+158,            CONST0x56_0,          0
+159,            CONST0x57_0,          0
+160,                 LOCKED,          0
+161,               FSM_BUSY,          0
+162,               ADC_BUSY,          0
+163,                 REF_OK,          0
+164,            CONST0x58_4,          0
+165,                SYNC_OK,          0
+166,                EN_CLK1,          0
+167,                EN_CLK2,          0
+168,            CONST0x59_0,          0
+169,               VCO_CORE,          0
+170,           RESERVED_X5A,          0
+171,              CHIP_TEMP,          0
+172,           RESERVED_X5C,          0
+173,            CONST0x5D_0,          0
+174,               VCO_BAND,          0
+175,            CONST0x5F_0,          0
+176,               VCO_BIAS,          0
+177,           RESERVED_X60,          0
+178,            CONST0x61_0,          0
+179,           RESERVED_X61,          0
+180,            CONST0x62_0,          0
+181,           RESERVED_X62,          0
+182,                VERSION,          0
+183,                  TST_1,          0
+184,                  TST_2,          0
+185,                  TST_3,          0
+186,                  TST_4,          0
+187,                  TST_5,          0
+188,         TST_6_DEADBEEF,          0
+189,             TST_7_DEAF,          0

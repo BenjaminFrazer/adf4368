@@ -3,3 +3,7 @@
 *.log
 tmp/
 .ccls-cache/
+/src/*.o
+*.out
+.cache/
+compile_commands.json

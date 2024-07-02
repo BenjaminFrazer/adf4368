@@ -9,7 +9,7 @@ UNITY_ROOT := lib/Unity
 
 CFLAGS := -g -Wall -std=c11
 SRC_DIR := src
-OBJECTS := $(SRC_DIR)/adf4368.o
+OBJECTS := $(patsubst %.c,%.o,$(wildcard $(SRC_DIR)/*.c))
 
 TEST_DIR := test
 INC_DIRS=-Isrc -I$(TEST_DIR) -I$(UNITY_ROOT)/src
@@ -22,11 +22,13 @@ TARGET_EXTENSION=.out
 
 CLEANUP = rm -f
 
-all: clean $(SRC_DIR)/main test
+all: clean test
 	@echo $(TEST_OBJECTS)
 
 clean:
-	@rm -f $(SRC_DIR)/main
+	@echo Cleaning
+	@rm -f $(SRC_DIR)/*.o
+	@rm -f $(TEST_DIR)/*.out
 	@rm -f $(TEST_TARGETS)
 
 $(OBJECTS): %.o: %.c
