@@ -1,16 +1,20 @@
 # ADF4368
+
 > [!WARNING] 
 > This API is still WIP and as of yet FULLY untested on actual hardware. I have done extensive testing of the parameter engine and frequency selection using host testing and I'm pretty confident it will work in auto-calibration mode. Fast hopping mode may still need a bit more work. I think the framework I've written here, critically the parameter engine, will still be useful to anyone intending to extend the capabilities of the library. I'm very open to accept pull requests and fixes.
 
 ## Overview
 
-This repository provides a 
+This is a C library providing an API for the the ADF4368 fractional n Digital synthesiser. The library if fully generic and decoupled from platform specific code by relying on the user to provide primitive SPI read and write functions. decouple it from platform specific code, relying on auses dependency injection to  
 
 ## Capabilities
 
-- On the fly computing of fractional frequency paramers.
+- Run-time computing of fractional frequency paramers based on an integer frequency in Hz.
+- Parameter system supporting read-write to every single register level setting by enumerated parameter.
 
 ## Limitations
+
+- As yet fully un-tested on actuall hardware.
 
 ## Basic Usage
 
@@ -70,39 +74,79 @@ if (err!=ADF4368_ERR_OK){
 }
 ```
 
-### Initialisation with custom parameters
-```c
-
-```
-
 ### Updating parameters on the fly
 ```c
+err = adf4368_write_param(&state, i, val);
+if (err!=ADF4368_ERR_OK){
+    printf(adf_str_err.val);
+}
+```
 
+### Reading parameter on-the-fly
+
+```c
+err = adf4368_read_uint_param(&state, i, &val);
+if (err!=ADF4368_ERR_OK){
+    printf(adf_str_err.val);
+}
 ```
 
 ### Frequeny hopping with auto calibration
 ```c
-
+adf4368_err err = adf4368_switch_freq_autocal(&state, f_target), state);
+if (err!=ADF4368_ERR_OK){
+    printf(adf_str_err.val);
+}
 ```
 
 ### Frequency hopping with manual calibration
 
+```c
+uint64_t f_target = G(10.2289340);
+adf4368_vco_cal_params cal;
+adf4368_err err;
+
+/* typically these will be retrieved from a cache generated during a seperate
+   * calibration phase */
+cal.vco_band = 0xFF;
+cal.vco_bias = 0xF;
+cal.vco_core = 0x3;
+
+err = adf4368_switch_calibration_mode(&state, ADF4368_MODE_MANUAL), state);
+// handle error
+if (err!=ADF4368_ERR_OK){
+    printf(adf_str_err.val);
+    return -1; 
+}
+err = adf4368_switch_freq_mancal(&state, f_target, cal), state);
+// handle error
+if (err!=ADF4368_ERR_OK){
+    printf(adf_str_err.val);
+    return -1; 
+}
+```
+
 ## API Philosophy
 
-### Parameter Cache
+### Parameter Cache (TODO)
 
-- State management problem
-- Also refered to as staging area
+### Self check (WIP)
 
-### Self check
+- There are a number of paramters in the ADF4368 need to be configured acording to particular rules, depending on configurations such as the reference clock frequency and the target RF frequency.
+- When requesting a new frequency, the API will run self check and diagnostics on the selected paramters and determin if the requested frequency is achievable. If any check fails, an error code will be passed up the call stack.
 
-### Error Handling
+### Error Handling & Debug (WIP)
 
-- 
-
-### Debug
-
+- Most functions in the library will return an enumerated error code variable.
+- Tools for providing user readable debug messages are provided in an optional serperate debug library, largely for memory efficiency.
+- The debug library can be used by including the `debug.h` header file.
+- The debug library contains functions for printing the most recently generated error codes into human readable error strings, including line-number and file name of the occurence.
+- Additional functions allow you to print the internal state of key API registers such as the frequency, calibration and clock divider paramters.
 
 ### Tests
+
+- Host testing is conducted using the Unity C testing library.
+- This is included as a sub-repo in the libs/ directory. Include this by doing a recursive clone: `git clone --recurse-submodules`.
+- Tests can be run using `make test`
 
 ## ADF4368 Theory (TODO)
