@@ -1,4 +1,6 @@
 # ADF4368
+> [!WARNING] 
+> This API is still WIP and as of yet FULLY untested on actual hardware. I have done extensive testing of the parameter engine and frequency selection using host testing and I'm pretty confident it will work in auto-calibration mode. Fast hopping mode may still need a bit more work. I think the framework I've written here, critically the parameter engine, will still be useful to anyone intending to extend the capabilities of the library. I'm very open to accept pull requests and fixes.
 
 ## Overview
 
